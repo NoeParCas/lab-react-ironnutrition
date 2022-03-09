@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .App-logo {
@@ -24,15 +27,22 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  margin: 60px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.box {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.box div {
+  margin: 30px;
+}
+
+.list-container{
+  display: flex;
+  flex-direction: row;
 }
