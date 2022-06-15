@@ -29,9 +29,21 @@ function App() {
   };
 
   const addFoods = (foodToAdd) => {
-    console.log('producto a añadir es:', foodToAdd);
+    //console.log('producto a añadir es:', foodToAdd);
     setAddedFoods([...addedFoods, foodToAdd]);
   };
+
+
+  const deleteFood = (name) => {
+    const foodToDelete = foodShow.filter(eachFood =>
+      eachFood.name === name
+    )
+    let copyFoodToRender = [...foodToRender]
+    copyFoodToRender.splice(foodToDelete,1)
+
+    //console.log(foodToDelete, "despues de eliminar comida");
+    setFoodToRender(copyFoodToRender);
+  }
 
   return (
     <div className="App">
@@ -52,11 +64,15 @@ function App() {
     <div className="food-container">
       {foodToRender.map((eachFood, index) => {
         return (
+          <div key={index + eachFood.name} className="food">
           <FoodBox 
           food={eachFood} 
-          key={index + eachFood.name} 
           addFoods={addFoods} 
-          />)
+          deleteFood={deleteFood}
+          />
+          </div>
+          )
+
       })}
     </div>
 

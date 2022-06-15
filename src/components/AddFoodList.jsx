@@ -13,10 +13,13 @@ function AddFoodList(props) {
         <h3>Food List</h3>
 
         {props.addedFoods.map((eachAddedFood, index) => {
-            return <p key={index + eachAddedFood.name}> 
+            return (
+              <p key={index + eachAddedFood.name}> 
             {eachAddedFood.name}:
             {eachAddedFood.quantity} x {eachAddedFood.calories}: {eachAddedFood.quantity * eachAddedFood.calories}
             </p>
+            )
+            
         })}
         <p>Total{total}</p>
 
